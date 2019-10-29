@@ -13,18 +13,16 @@ bob=turtle.Turtle()
 bob.color('orange')
 bob.pensize(5)
 bob.speed(10000000000000000000000)
+
+#--------get inputs---------
+dist=int(input("How far would you like the turtle to move? "))
+turn=int(input("How much would you like the turtle to turn each time? "))
+times=int(input("Number of times? "))
 #--------actual movement-----
-dist=30 #starting distance to move
-for i in range(1000): #run 1000 times
+
+for i in range(times): #run 1000 times
     #print(bob.ycor())
     bob.forward(dist) #bob moves whatever random distance is
-    bob.rt(random.randint(1,360)) #turns random degrees
-    dist+=random.randint(1,15)
-    if dist>=125: #max distance of 125, then resets to 50
-        dist=50
-    if bob.xcor()>400 or bob.xcor()<-400: #if bob goes outside screen resets to 0,0
-        bob.setpos(0,0)
-    if bob.ycor()>400 or bob.ycor()<-400:
-        bob.setpos(0,0)
+    bob.rt(turn) #turns random degrees
 
 screen.exitonclick()
